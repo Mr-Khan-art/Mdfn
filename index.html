@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0b0f">
+<title>ROAST MASTER — Your Reality Check 🔥</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #0b0b0f;
+  --panel: #13131a;
+  --panel2: #191922;
+  --text: #f7f7fb;
+  --muted: #9696a8;
+  --orange: #ff7043;
+  --yellow: #ffcb69;
+  --border: rgba(255,255,255,.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,112,67,.13), transparent 45%),
+    var(--bg);
+  color: var(--text);
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.app {
+  width: min(100% - 32px, 680px);
+  margin: auto;
+  padding: 28px 0 35px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 65px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -.7px;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffcb69, #ff7043);
+  color: #17100d;
+  font-size: 22px;
+}
+
+.badge {
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 30px;
+  padding: 7px 12px;
+  font-size: 12px;
+}
+
+.screen {
+  animation: appear .35s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--yellow);
+  border: 1px solid rgba(255,203,105,.23);
+  background: rgba(255,203,105,.06);
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(38px, 9vw, 66px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+  margin: 0;
+  font-weight: 900;
+}
+
+h1 span {
+  color: var(--orange);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 440px;
+  margin: 22px auto 32px;
+}
+
+.search-box {
+  max-width: 470px;
+  margin: 0 auto;
+  padding: 7px;
+  display: flex;
+  gap: 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.2);
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding: 12px 13px;
+  font-size: 15px;
+}
+
+.search-box input::placeholder {
+  color: #777789;
+}
+
+.primary-btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 20px;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #ffcb69, #ff7043);
+  color: #1c100b;
+  font-weight: 800;
+  transition: transform .2s, filter .2s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.primary-btn:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+.hint {
+  color: #777789;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 60px;
+}
+
+.feature {
+  padding: 18px 10px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255,255,255,.025);
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.feature strong {
+  display: block;
+  font-size: 13px;
+}
+
+.feature small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.footer {
+  text-align: center;
+  color: #686878;
+  font-size: 11px;
+  margin-top: 55px;
+}
+
+/* RESULT SCREEN */
+
+.result-heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.result-heading .eyebrow {
+  margin-bottom: 13px;
+}
+
+.result-heading h2 {
+  font-size: 27px;
+  margin: 0;
+}
+
+.result-heading p {
+  color: var(--muted);
+  margin: 5px 0 0;
+  font-size: 13px;
+}
+
+.score-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255,112,67,.17), transparent 45%),
+    var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 23px;
+  padding: 27px 22px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.score-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.score-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -4px;
+  color: var(--orange);
+  line-height: 1.2;
+  margin: 7px 0;
+}
+
+.score-number small {
+  font-size: 22px;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+
+.score-message {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 7px 15px;
+  background: rgba(255,112,67,.1);
+  color: var(--yellow);
+  font-size: 13px;
+}
+
+.report-title {
+  margin: 27px 0 12px;
+  font-size: 17px;
+}
+
+.report-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.report-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 17px 15px;
+  min-width: 0;
+}
+
+.report-item.special {
+  grid-column: 1 / -1;
+}
+
+.item-label {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.item-text {
+  font-size: 14px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.verdict {
+  margin-top: 15px;
+  padding: 22px;
+  background: linear-gradient(135deg, rgba(255,203,105,.09), rgba(255,112,67,.09));
+  border: 1px solid rgba(255,203,105,.2);
+  border-radius: 18px;
+}
+
+.verdict-label {
+  color: var(--yellow);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.verdict-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.secondary-btn {
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 13px 10px;
+  font-weight: 600;
+}
+
+.secondary-btn:hover {
+  background: #22222d;
+}
+
+.home-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.home-btn:hover {
+  color: white;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%) translateY(20px);
+  background: #f7f7fb;
+  color: #15151a;
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 10px 35px #0005;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s;
+  z-index: 99;
+  width: max-content;
+  max-width: calc(100% - 30px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 480px) {
+  .app {
+    width: min(100% - 24px, 680px);
+    padding-top: 18px;
+  }
+
+  .topbar {
+    margin-bottom: 48px;
+  }
+
+  .brand {
+    font-size: 13px;
+  }
+
+  .badge {
+    font-size: 10px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input {
+    padding: 14px 12px;
+  }
+
+  .search-box .primary-btn {
+    width: 100%;
+  }
+
+  .feature-grid {
+    gap: 7px;
+    margin-top: 43px;
+  }
+
+  .feature {
+    padding: 14px 5px;
+  }
+
+  .feature strong {
+    font-size: 11px;
+  }
+
+  .feature small {
+    font-size: 10px;
+  }
+
+  .report-list {
+    gap: 9px;
+  }
+
+  .report-item {
+    padding: 13px 11px;
+  }
+
+  .item-text {
+    font-size: 13px;
+  }
+
+  .score-number {
+    font-size: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">🔥</div>
+      <div>ROAST MASTER</div>
+    </div>
+    <div class="badge">NO MERCY MODE</div>
+  </header>
+
+  <!-- HOME SCREEN -->
+  <main id="homeScreen" class="screen">
+
+    <section class="hero">
+      <div class="eyebrow">⚡ FUN MODE ACTIVATED</div>
+
+      <h1>ROAST <span>MASTER.</span></h1>
+
+      <p class="subtitle">
+        নাম লেখো। নিজের চরিত্রের এমন রিপোর্ট পাবে,
+        যা দেখে আয়নাও তোমাকে চিনতে অস্বীকার করবে! 😂
+      </p>
+
+      <form id="roastForm" class="search-box">
+        <input
+          id="nameInput"
+          type="text"
+          maxlength="40"
+          placeholder="এখানে নাম লেখো..."
+          autocomplete="off"
+          aria-label="নাম লেখো"
+          required
+        >
+        <button id="roastButton" class="primary-btn" type="submit">
+          Roast Me 🔥
+        </button>
+      </form>
+
+      <div class="hint">
+        নিজের নাম অথবা বন্ধুর নাম লেখো। মজা শুরু হোক! 👀
+      </div>
+    </section>
+
+    <section class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">🧠</div>
+        <strong>বুদ্ধির পরীক্ষা</strong>
+        <small>মাথায় কী চলে?</small>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">💘</div>
+        <strong>প্রেমের অবস্থা</strong>
+        <small>Single নাকি কিংবদন্তি?</small>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🔥</div>
+        <strong>Roast Report</strong>
+        <small>সত্যি একটু বেশি!</small>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Made by ROBIUL for Entertainment Only!
+    </footer>
+
+  </main>
+
+
+  <!-- RESULT SCREEN -->
+  <main id="resultScreen" class="screen hidden">
+
+    <section class="result-heading">
+      <div class="eyebrow">📋 YOUR PERSONAL REPORT</div>
+      <h2 id="resultName">নাম</h2>
+      <p>তোমার চরিত্রের রিপোর্ট তৈরি হয়ে গেছে। সামলাতে পারবে তো? 😏</p>
+    </section>
+
+    <section class="score-card">
+      <div class="score-label">OFFICIAL ROAST SCORE</div>
+
+      <div class="score-number">
+        <span id="scoreNumber">87</span><small>/100</small>
+      </div>
+
+      <div class="score-message" id="scoreMessage">
+        বিপদের আরেক নাম তুমি! 🔥
+      </div>
+    </section>
+
+    <h3 class="report-title">🔍 বিস্তারিত রিপোর্ট</h3>
+
+    <section id="reportList" class="report-list"></section>
+
+    <section class="verdict">
+      <div class="verdict-label">⚖️ FINAL VERDICT</div>
+      <div id="verdictText" class="verdict-text"></div>
+    </section>
+
+    <section class="actions">
+      <button id="copyButton" class="secondary-btn" type="button">
+        📋 রিপোর্ট কপি
+      </button>
+
+      <button id="shareButton" class="primary-btn" type="button">
+        🚀 বন্ধুকে পাঠাও
+      </button>
+    </section>
+
+    <button id="homeButton" class="home-btn" type="button">
+      ← আবার নতুন করে Roast করো
+    </button>
+
+    <footer class="footer">
+      Made by ROBIUL For Entertainment Only!
+    </footer>
+
+  </main>
+
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* ==========================================
+   ROAST MASTER
+   Single-file website
+   No API / No backend / No database
+========================================== */
+
+const $ = (id) => document.getElementById(id);
+
+const homeScreen = $("homeScreen");
+const resultScreen = $("resultScreen");
+const roastForm = $("roastForm");
+const nameInput = $("nameInput");
+const roastButton = $("roastButton");
+
+let currentReportText = "";
+let toastTimer = null;
+
+
+/* ==========================================
+   FUNNY BANGLA ROAST DATABASE
+========================================== */
+
+const categories = [
+  {
+    label: "🧠 বুদ্ধিমত্তা",
+    options: [
+      "বুদ্ধি আছে, কিন্তু সেটা এখনো পরীক্ষামূলক পর্যায়ে।",
+      "প্রশ্ন সহজ হলেও তোমার মস্তিষ্ক আগে মিটিং ডাকে।",
+      "তোমার ব্রেইন চলে, তবে মাঝে মাঝে Buffering হয়।",
+      "বুদ্ধি Wi-Fi-এর মতো—কখনো Full Signal, কখনো No Internet।",
+      "তুমি ভাবতে শুরু করলে Google-ও একটু চিন্তায় পড়ে যায়।",
+      "মাথায় আইডিয়া আসে, কিন্তু বেশির ভাগই রাস্তা ভুলে যায়।",
+      "তোমার চিন্তার গতি দ্রুত, সিদ্ধান্তের গতি সরকারি অফিসের মতো।",
+      "তুমি জিনিয়াস হতে পারতে, যদি আলসেমি কোর্সটা না করতে।"
+    ]
+  },
+  {
+    label: "😎 অ্যাটিটিউড",
+    options: [
+      "অ্যাটিটিউড এমন, যেন পুরো পৃথিবী তোমার কাছে ধার চায়।",
+      "চেহারায় CEO, কাজকর্মে ছুটিতে থাকা ইন্টার্ন।",
+      "তোমার Attitude Premium, কিন্তু Performance Free Trial।",
+      "নিজেকে Main Character ভাবো, অথচ গল্পে এখনো Intro চলছে।",
+      "ভাব এমন, যেন Netflix তোমার জীবন নিয়ে সিরিজ বানাবে।",
+      "তোমার আত্মবিশ্বাস দেখে বাস্তবতাও লজ্জা পায়।",
+      "স্টাইল VIP, পকেট বলে Please Try Again Later।",
+      "তুমি যেখানে যাও, নিজের Ego-কে VIP সিট দিয়ে নাও।"
+    ]
+  },
+  {
+    label: "💘 প্রেমের অবস্থা",
+    options: [
+      "তোমার Love Life এতটাই শান্ত, সেখানে পাখিও বাসা বাঁধে।",
+      "Crush অনলাইনে আসে, তোমার ভাগ্য Offline হয়ে যায়।",
+      "প্রেমের বাজারে তুমি আছো, কিন্তু ক্রেতা এখনো আসেনি।",
+      "তোমার প্রেমের গল্পে Hero আছে, Heroine-এর চরিত্র এখনো Casting-এ।",
+      "Reply-এর অপেক্ষায় তুমি ফোনের ব্যাটারির চেয়েও বেশি ক্ষয় হও।",
+      "তোমার Romantic Side আছে, কিন্তু সেটা Airplane Mode-এ।",
+      "তোমার প্রেমের ভাগ্য দেখে Cupid-ও Resign দিতে চায়।",
+      "তোমার Crush তোমাকে চেনে কি না, সেটাই এখন বড় রহস্য।"
+    ]
+  },
+  {
+    label: "📱 মোবাইল আসক্তি",
+    options: [
+      "ফোন হারালে তোমার আগে ফোনেরই তোমাকে মিস হবে।",
+      "স্ক্রিন টাইম দেখে চার্জারও তোমাকে বাবা বলে ডাকতে চায়।",
+      "ফোনের Battery ১%, কিন্তু তোমার Scrolling ১০০%।",
+      "তোমার Thumb এত ব্যস্ত, চাকরির আবেদন করতে পারে।",
+      "ফোন নামিয়ে রাখলে তুমি নিজের হাতকেই চিনতে পারবে না।",
+      "Notification না এলে তুমি নিজেই নিজের ফোনে ঢুঁ মারো।",
+      "তোমার জীবনের সবচেয়ে দীর্ঘ সম্পর্ক ফোনের সঙ্গে।",
+      "ঘুমানোর আগে ফোন, ঘুম থেকে উঠে ফোন—মাঝখানে তুমি কোথায়?"
+    ]
+  },
+  {
+    label: "💸 টাকা-পয়সা",
+    options: [
+      "মাসের শুরুতে নবাব, শেষে অর্থনীতির গবেষক।",
+      "টাকা তোমার কাছে আসে, কিন্তু থাকার চুক্তি করে না।",
+      "তোমার Wallet এত শান্ত, বাতাস গেলেও শব্দ হয় না।",
+      "বড়লোক হওয়ার স্বপ্ন আছে, বাজেটের সঙ্গে সম্পর্ক নেই।",
+      "তুমি Savings করতে চাও, কিন্তু Shopping তোমাকে ভালোবাসে।",
+      "পকেটের অবস্থা দেখে ATM-ও Sorry বলতে চায়।",
+      "তোমার Financial Plan হলো—আগে খরচ, পরে চিন্তা।",
+      "ব্যালেন্স কম, আত্মবিশ্বাসের কোনো সীমা নেই।"
+    ]
+  },
+  {
+    label: "🛌 অলসতা",
+    options: [
+      "তোমার অলসতা দেখে রবিবারও নিজেকে কর্মঠ মনে করে।",
+      "কাজ কালকে করবে—এই কালটা কয়েক বছর ধরে আসছে।",
+      "তুমি এতটাই অলস, স্বপ্নেও Shortcut খোঁজো।",
+      "বিছানা তোমার Home, বাকি পৃথিবী শুধু Visiting Area।",
+      "তোমার Productivity ঘুমের সঙ্গে Joint Venture করেছে।",
+      "কাজের কথা শুনলেই তোমার আত্মা ছুটিতে চলে যায়।",
+      "তুমি বিশ্রাম নাও এমনভাবে, যেন দেশের অর্থনীতি তোমার ওপর চলে।",
+      "তোমার To-do List দেখে কাজগুলো নিজেরাই Resign করেছে।"
+    ]
+  },
+  {
+    label: "✨ বিশেষ প্রতিভা",
+    options: [
+      "শেষ মুহূর্তে এমন টেনশন নিতে পারো, যা অন্যরা সারা বছরেও পারে না।",
+      "তুমি পাঁচ মিনিটের কাজ পাঁচ দিনে করার শিল্পী।",
+      "না জেনেও আত্মবিশ্বাসের সঙ্গে উত্তর দেওয়া তোমার সুপারপাওয়ার।",
+      "মানুষকে উপদেশ দাও, নিজের বেলায় Terms & Conditions আলাদা।",
+      "তুমি এমন ব্যস্ত থাকো, যেন কাজ না করারও Deadline আছে।",
+      "তোমার Excuse তৈরির গতি দেখলে NASA যোগাযোগ করত।",
+      "তুমি পরিস্থিতি সামলাতে পারো—যদি পরিস্থিতি ঘুমের না হয়।",
+      "কিছু না করেও ক্লান্ত হওয়ার বিরল প্রতিভা তোমার আছে।"
+    ]
+  }
+];
+
+const verdicts = [
+  "তোমাকে বদলানোর চেষ্টা করে লাভ নেই। আগে তোমার Software Update আসুক। 😂",
+  "তোমার মধ্যে Potential আছে। সমস্যা হলো Potential-টাই এখনো ঘুমাচ্ছে।",
+  "তুমি খারাপ না। তুমি শুধু একটু বেশি Entertainment Material। 🔥",
+  "জীবনে অনেক দূর যাবে—যদি বিছানা থেকে উঠতে পারো।",
+  "তোমাকে নিয়ে গবেষণা করা উচিত। এমন Confidence সচরাচর পাওয়া যায় না।",
+  "তোমার জীবন একটা Comedy Show, আর তুমি নিজেই Main Performer।",
+  "তোমার ভবিষ্যৎ উজ্জ্বল। শুধু বর্তমানটা একটু Loading-এ আছে।",
+  "তুমি Unique। এই ধরনের Sample পৃথিবীতে বেশি না থাকাই ভালো।",
+  "তোমার গল্প এখনো শেষ হয়নি। লেখকও বুঝতে পারছে না এরপর কী হবে।",
+  "তোমাকে Roast করা সহজ। তোমার জীবন নিজেই অর্ধেক কাজ করে রেখেছে।"
+];
+
+const scoreMessages = [
+  { max: 25, text: "নিরীহ প্রাণী! আপাতত নিরাপদ। 😇" },
+  { max: 45, text: "হালকা ঝাল! এখনো বাঁচার সুযোগ আছে। 🌶️" },
+  { max: 65, text: "পরিস্থিতি সন্দেহজনক! সাবধানে থাকো। 😏" },
+  { max: 85, text: "বিপদের আরেক নাম তুমি! 🔥" },
+  { max: 100, text: "তোমার জন্য আলাদা Fire Service লাগবে! 🚒" }
+];
+
+
+/* ==========================================
+   GENERATE 500 DISTINCT REPORT COMBINATIONS
+
+   Six categories × eight options each.
+   First three categories produce 512
+   different combinations. We use 500.
+========================================== */
+
+function buildReportPool() {
+  const pool = [];
+
+  for (let n = 0; n < 500; n++) {
+    let value = n;
+    const choices = [];
+
+    for (let i = 0; i < categories.length; i++) {
+      choices.push(value % categories[i].options.length);
+      value = Math.floor(value / categories[i].options.length);
+    }
+
+    pool.push({
+      id: n,
+      choices: choices,
+      verdictIndex: n % verdicts.length,
+      score: 15 + ((n * 37 + 19) % 86)
+    });
+  }
+
+  // Shuffle report order
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+
+  return pool;
+}
+
+let reportPool = buildReportPool();
+let nextReportIndex = 0;
+
+function getNextReport() {
+  if (nextReportIndex >= reportPool.length) {
+    reportPool = buildReportPool();
+    nextReportIndex = 0;
+    showToast("🎲 নতুন ৫০০টি রিপোর্টের রাউন্ড শুরু!");
+  }
+
+  return reportPool[nextReportIndex++];
+}
+
+
+/* ==========================================
+   SCREEN NAVIGATION
+========================================== */
+
+function showHome() {
+  resultScreen.classList.add("hidden");
+  homeScreen.classList.remove("hidden");
+
+  nameInput.value = "";
+  roastButton.disabled = false;
+  roastButton.textContent = "Roast Me 🔥";
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  setTimeout(() => nameInput.focus(), 150);
+}
+
+function showResults() {
+  homeScreen.classList.add("hidden");
+  resultScreen.classList.remove("hidden");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+
+/* ==========================================
+   REPORT GENERATOR
+========================================== */
+
+function generateReport(name) {
+  const report = getNextReport();
+
+  $("resultName").textContent = "🔥 " + name;
+
+  $("scoreNumber").textContent = report.score;
+
+  const scoreMessage = scoreMessages.find(
+    item => report.score <= item.max
+  );
+
+  $("scoreMessage").textContent = scoreMessage
+    ? scoreMessage.text
+    : "তোমার জন্য Fire Service লাগবে! 🚒";
+
+  const reportList = $("reportList");
+  reportList.replaceChildren();
+
+  categories.forEach((category, index) => {
+    const item = document.createElement("article");
+    item.className = "report-item";
+
+    const label = document.createElement("div");
+    label.className = "item-label";
+    label.textContent = category.label;
+
+    const text = document.createElement("div");
+    text.className = "item-text";
+    text.textContent = category.options[report.choices[index]];
+
+    item.append(label, text);
+    reportList.appendChild(item);
+  });
+
+  const special = document.createElement("article");
+  special.className = "report-item special";
+
+  const specialLabel = document.createElement("div");
+  specialLabel.className = "item-label";
+  specialLabel.textContent = "🎯 তোমার গোপন সত্য";
+
+  const specialText = document.createElement("div");
+  specialText.className = "item-text";
+  specialText.textContent =
+    "তোমার রিপোর্ট নম্বর #" + String(report.id + 1).padStart(3, "0") +
+    " — " + verdicts[report.verdictIndex];
+
+  special.append(specialLabel, specialText);
+  reportList.appendChild(special);
+
+  $("verdictText").textContent = verdicts[report.verdictIndex];
+
+  currentReportText =
+    "🔥 ROAST MASTER 🔥\n\n" +
+    "নাম: " + name + "\n" +
+    "Roast Score: " + report.score + "/100\n\n" +
+    categories.map((category, index) =>
+      category.label + "\n" +
+      category.options[report.choices[index]]
+    ).join("\n\n") +
+    "\n\nবিশেষ সত্য:\n" + verdicts[report.verdictIndex] +
+    "\n\nROAST MASTER — FOR FUN ONLY 😂";
+}
+
+
+/* ==========================================
+   FORM SUBMISSION
+========================================== */
+
+roastForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = nameInput.value.trim();
+
+  if (!name) {
+    showToast("আগে একটা নাম লেখো! 😏");
+    nameInput.focus();
+    return;
+  }
+
+  if (name.length > 40) {
+    showToast("নামটি একটু ছোট করো!");
+    return;
+  }
+
+  roastButton.disabled = true;
+  roastButton.textContent = "Roasting... 🔥";
+
+  // Tiny delay for the dramatic effect
+  setTimeout(() => {
+    generateReport(name);
+    showResults();
+    roastButton.disabled = false;
+    roastButton.textContent = "Roast Me 🔥";
+  }, 350);
+});
+
+
+/* ==========================================
+   COPY REPORT
+========================================== */
+
+async function copyReport() {
+  if (!currentReportText) return;
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(currentReportText);
+    } else {
+      fallbackCopy(currentReportText);
+    }
+
+    showToast("রিপোর্ট কপি হয়েছে! 📋");
+
+  } catch (error) {
+    try {
+      fallbackCopy(currentReportText);
+      showToast("রিপোর্ট কপি হয়েছে! 📋");
+    } catch (copyError) {
+      showToast("কপি হয়নি। রিপোর্টের লেখা নির্বাচন করে কপি করো।");
+    }
+  }
+}
+
+function fallbackCopy(text) {
+  const area = document.createElement("textarea");
+
+  area.value = text;
+  area.setAttribute("readonly", "");
+  area.style.position = "fixed";
+  area.style.opacity = "0";
+  area.style.top = "0";
+  area.style.left = "0";
+
+  document.body.appendChild(area);
+  area.focus();
+  area.select();
+
+  const success = document.execCommand("copy");
+  area.remove();
+
+  if (!success) {
+    throw new Error("Copy failed");
+  }
+}
+
+$("copyButton").addEventListener("click", copyReport);
+
+
+/* ==========================================
+   SHARE REPORT
+========================================== */
+
+$("shareButton").addEventListener("click", async function() {
+  if (!currentReportText) return;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "ROAST MASTER 🔥",
+        text: currentReportText
+      });
+    } catch (error) {
+      // User cancelled sharing. No error message needed.
+    }
+  } else {
+    await copyReport();
+    showToast("কপি হয়েছে! এবার বন্ধুকে পাঠিয়ে দাও। 🚀");
+  }
+});
+
+
+/* ==========================================
+   HOME BUTTON
+========================================== */
+
+$("homeButton").addEventListener("click", showHome);
+
+
+/* ==========================================
+   TOAST MESSAGE
+========================================== */
+
+function showToast(message) {
+  const toast = $("toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
+}
+
+</script>
+
+</body>
+</html>
